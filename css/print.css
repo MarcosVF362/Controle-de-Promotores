@@ -1,0 +1,51 @@
+/* Estilos para a página de relatórios */
+/* Mostrar apenas o conteúdo do relatório */
+/* Estilo para o título h1 na versão impressa */
+@media print {
+    h1 {
+        color: #333; /* Defina a cor desejada */
+        font-size: 35px; /* Defina o tamanho da fonte desejado */
+        font-weight: bold; /* Defina a espessura da fonte desejada */
+        text-align: center; /* Alinhe o texto ao centro */
+        margin-bottom: 20px; /* Adicione um espaço inferior */
+    }
+}
+
+
+table {
+    display: inline-block !important;
+    max-width: calc(100% - 20px); /* Defina um valor máximo para a largura da tabela */
+    vertical-align: top;
+    margin-bottom: 10px; /* Adicione um espaço entre as tabelas */
+}
+
+th,
+td {
+    display: table-cell !important;
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    width: auto; /* Permita que as células tenham largura automática */
+    margin-right: 0px; /* Espaçamento entre as células */
+}
+
+/* Alinhar dados da hora de entrada e hora de saída ao centro */
+td:nth-child(1), /* Hora de Entrada */
+td:nth-child(2) { /* Hora de Saída */
+    text-align: center;
+}
+
+/* Ocultar o menu superior na versão impressa */
+@media print {
+    .menu-superior {
+        display: none;
+    }
+    button {
+        display: none;
+    }
+
+    @page {
+        margin: 0;
+        margin-left: 1cm; /* Defina a margem esquerda conforme necessário */
+    }
+}

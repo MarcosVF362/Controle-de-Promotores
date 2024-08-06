@@ -1,0 +1,167 @@
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #46a490;
+}
+
+/* Estilos específicos para a página index */
+.index-page {
+    background-image: url('./img/fundo.png'); /* Substitua pelo caminho real da sua imagem */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #555;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #208520;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #186f18;
+}
+
+/* Estilos específicos para checkboxes */
+.dias-semana {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.dias-semana input[type="checkbox"] {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.dias-semana label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Estilos para botões */
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    background-color: #208520;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #186f18;
+}
+
+/* Estilos para a search-container */
+.search-container {
+    display: flex;
+    align-items: center; /* Garantir que os itens estejam centralizados verticalmente */
+    margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+    flex: 1;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #208520;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0; /* Garantir que não há margem superior */
+}
+
+.search-container button:hover {
+    background-color: #186f18;
+}
+
+.marca-dagua {
+    position: fixed; /* Posição fixa para manter a marca d'água na parte inferior da página */
+    bottom: 1px; /* Ajuste verticalmente */
+    left: 50%; /* Ajuste horizontalmente */
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    font-size: 14px; /* Tamanho da fonte */
+    color: rgba(255, 255, 255, 0.511); /* Cor da marca d'água */
+}
+
+.resultados-relatorios {
+    margin-top: 20px;
+}
+
+.resultado-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.resultado-item p {
+    margin: 5px 0;
+}
+
+.resultado-item button {
+    margin-top: 10px;
+}
