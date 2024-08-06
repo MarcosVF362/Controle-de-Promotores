@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Superior</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .menu-superior {
+            background-color: rgba(32, 59, 155, 0.8); /* Fundo azul com 80% de opacidade */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        .menu-superior .menu-items {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+            padding-left: 100px;
+        }
+
+        .menu-superior ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .menu-superior ul li {
+            display: inline-block;
+            position: relative;
+        }
+
+        .menu-superior ul li a {
+            display: block;
+            padding: 15px 25px;
+            text-decoration: none;
+            color: #fff; /* Cor do texto branca */
+            font-size: 18px; /* Tamanho da fonte */
+            font-weight: 700; /* Peso da fonte */
+            text-transform: uppercase; /* Letras maiúsculas */
+            letter-spacing: 1px; /* Espaçamento entre letras */
+            transition: color 0.3s ease;
+        }
+
+        .menu-superior ul li a:hover {
+            color: #46a490; /* Cor do texto ao passar o mouse */
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Sombra do texto */
+        }
+
+        .menu-superior ul li:hover > ul {
+            display: block;
+        }
+
+        .menu-superior ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(32, 59, 155, 0.8); /* Fundo azul com 80% de opacidade */
+            border: 1px solid #fff; /* Borda branca */
+            width: 200px; /* Largura do submenu */
+        }
+
+        .menu-superior ul ul li {
+            display: block;
+        }
+
+        .menu-superior ul ul li a {
+            padding: 10px 20px;
+            font-size: 16px; /* Tamanho da fonte do submenu */
+        }
+
+        .menu-superior ul ul ul {
+            left: 100%;
+            top: 0;
+        }
+
+        /* Estilo para destacar o menu */
+        .menu-superior .active > a {
+            background-color: rgba(5, 5, 5, 0.8); /* Fundo preto com 80% de opacidade */
+        }
+
+        .menu-superior .active > ul {
+            display: block;
+        }
+
+        /* Estilo para o botão de logout */
+        .logout {
+            margin-left: auto;
+        }
+
+        .logout a {
+            display: block;
+            padding: 15px 25px;
+            text-decoration: none;
+            color: #fff; /* Cor do texto branca */
+            font-size: 18px; /* Tamanho da fonte */
+            font-weight: 700; /* Peso da fonte */
+            text-transform: uppercase; /* Letras maiúsculas */
+            letter-spacing: 1px; /* Espaçamento entre letras */
+        }
+
+        .logout a:hover {
+            color: #db3b0e; /* Cor do texto ao passar o mouse */
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Sombra do texto */
+        }
+
+    </style>
+</head>
+<body>
+
+<nav class="menu-superior">
+    <div class="menu-items">
+        <ul>
+            <li class="submenu">
+                <a href="index.php">INÍCIO</a>
+            </li>
+            <li class="submenu">
+                <a href="#">ENTRADA</a>
+                <ul>
+                    <li><a href="entrada.php">REGISTRAR ENTRADA</a></li>
+                    <li><a href="lista_entradas.php">LISTA DE ENTRADAS</a></li>
+                </ul>
+            </li>
+            <li class="submenu">
+                <a href="#">PROMOTORES</a>
+                <ul>
+                    <li><a href="cadastro_promotores.php">CADASTRAR</a></li>
+                    <li><a href="promotores.php">PROMOTORES CADASTRADOS</a></li>
+                </ul>
+            </li>
+            <li class="submenu">
+                <a href="#">RESPONSÁVEIS</a>
+                <ul>
+                    <li><a href="cadastro_responsaveis.php">CADASTRAR</a></li>
+                    <li><a href="responsaveis.php">RESPONSÁVEIS CADASTRADOS</a></li>
+                </ul>
+            </li>
+            <li><a href="relatorios.php">RELATÓRIOS</a></li>
+        </ul>
+    </div>
+    <div class="logout">
+        <a href="logout.php">Sair</a>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener('click', function(event) {
+        // Verifica se o elemento clicado não é um submenu
+        if (!event.target.closest('.submenu')) {
+            // Remove a classe 'active' de todos os submenus
+            document.querySelectorAll('.submenu').forEach(submenu => {
+                submenu.classList.remove('active');
+            });
+        }
+    });
+    
+    const submenus = document.querySelectorAll('.submenu');
+
+    submenus.forEach(submenu => {
+        submenu.addEventListener('click', () => {
+            // Remove a classe 'active' de todos os submenus
+            submenus.forEach(sub => sub.classList.remove('active'));
+            // Adiciona a classe 'active' apenas ao submenu clicado
+            submenu.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
